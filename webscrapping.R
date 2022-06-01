@@ -30,6 +30,7 @@ ScoreTable <- as.data.table(
 
 ScoreTable <- ScoreTable[,.(`Home Team`= X,Score = X.2,`Away Team` = X.4, Stadium = X.5)]
 
+#Note : orfeas - troulloi : 3 - 0 decision of kop
 
 # 2a Fix Tables
 
@@ -221,7 +222,7 @@ ScoreTable <- AllmatchGoals[ScoreTable,on = .(MatchId)]
 # We output four files 
 
 
-fwrite(ScoreTable,"/output/Scoretable.csv")
-fwrite(LeaugeTable,"/output/LeaugeTable.csv")
-fwrite(PlayerAgeInfo,"/output/PlayerAgeInfo.csv")
+saveRDS(ScoreTable,"output/Scoretable.rds")
+saveRDS(LeaugeTable,"output/LeaugeTable.rds")
+saveRDS(PlayerAgeInfo,"output/PlayerAgeInfo.rds")
 
